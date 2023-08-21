@@ -41,7 +41,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+/* Custom Properties */
+:root {
+	font-size: 16px;
+	font-family: Roboto, sans-serif;
+	--sidebar-color: #1792D4;
+	--header-color: white;
+	--main-color: #E2E8F0;
+	--card-color:var(--header-color);
+	--card-stripe-color: #F0B429;
+	--card-border:10px solid var(--card-stripe-color);
+	--main-shadow: inset 0 2px 8px grey;
+	--card-shadow:0 5px 10px grey;
+	--radius: 10px;
+	
+}
 /* Layout */
 
 /* Main Structure */
@@ -95,27 +109,33 @@ body {
 /* Styling and Color*/
 
 .sidebar {
-	background-color: #1792D4;
+	background-color: var(--sidebar-color);
 }
 
 .header {
-	background-color: white;
+	background-color: var(--header-color);
 }
 
 .main-content {
-	background-color: #E2E8F0;
-	box-shadow: inset 0 2px 8px grey;
+	background-color: var(--main-color);
+	box-shadow: var(--main-shadow);
 }
 
 .side-cards {
-	box-shadow: 0 5px 10px grey;
-  background-color:white;
+	box-shadow: var(--card-shadow);
+  background-color: var(--card-color);
   border-radius: 10px;
 }
 
 .card-container > .card {
-	border-left: 10px solid #F0B429;
-  box-shadow: 0 5px 10px grey;
-  background-color:white;
-  border-radius: 10px;
+	border-left: var(--card-border);
+  box-shadow: var(--card-shadow);
+  background-color:var(--card-color);
+  border-radius: var(--radius);
+}
+
+h3 {
+	font-size: 1.75rem;
+	margin-bottom: 15px;
+	font-weight: 600;
 }
