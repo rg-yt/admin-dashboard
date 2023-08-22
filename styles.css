@@ -80,17 +80,7 @@ body {
 	gap: var(--gap);
 	padding: 2rem;
 }
-@media (min-width: 60em){
-	.main-content {
-		grid-template-columns: 4fr 1fr;
 
-	}
-}
-@media (max-width: 70em ) {
-	.links > h5 {
-		display: none;
-	}
-}
 
 /* Card structure */
 
@@ -146,6 +136,23 @@ body {
 /* Header */
 .header {
 	min-height: 100px;
+	display: grid;
+	padding: 2rem;
+}
+.header-bottom{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.header-bottom > .hello {
+	display: grid;
+	grid-template-columns: min-content 1fr;
+}
+.hello > h1 {
+	grid-column: 2;
+}
+.header-bottom img {
+	height: 60px;
 }
 /* Right Side Structure */
 
@@ -250,6 +257,25 @@ p {
 	filter: invert(100%);
 } 
 
+@media (min-width: 60em){
+	.main-content {
+		grid-template-columns: 4fr 1fr;
+
+	}
+	
+}
+@media (max-width: 70em ) {
+	.links > h5 {
+		display: none;
+	}
+	.header {
+		justify-items: center;
+	}
+	.header-bottom {
+		flex-direction: column;
+		align-items: center;
+	}
+}
 
 
 
