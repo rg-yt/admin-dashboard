@@ -71,11 +71,9 @@ body {
 
 .sidebar {
   grid-row: 1 / 3;
-  display: grid;
 }
 .header {
 	grid-column-start: 2;
-	/* min-height: 100px; */
 }
 .main-content {
 	display: grid;
@@ -87,7 +85,11 @@ body {
 		grid-template-columns: 4fr 1fr;
 
 	}
-	
+}
+@media (max-width: 70em ) {
+	.links > h5 {
+		display: none;
+	}
 }
 
 /* Card structure */
@@ -119,8 +121,33 @@ body {
 	justify-content: end;
 } 
 
+/* Sidebar Left Structure */
+.sidebar {
+	display: grid;
+	align-items: start;
+	justify-content: center;
+	grid-auto-rows: min-content;
+}
+.sidebar > div {
+	margin: 10px 20px 20px 8%;
+}
+.links:nth-child(1) {
+	margin-bottom: 4rem;
+}
+.links:nth-child(7) {
+	margin-bottom: 4rem;
+}
+.links {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
 
-/* Side structure */
+/* Header */
+.header {
+	min-height: 100px;
+}
+/* Right Side Structure */
 
 .side-cards ul {
 	display: grid;
@@ -210,6 +237,18 @@ p {
 	font-size: var(--font-starting-size);
 	letter-spacing: 1px;
 }
+.links {
+	color:white;
+}
+
+/* Image styling */
+
+
+.links > img {
+	height: 50px;
+	width: auto;
+	filter: invert(100%);
+} 
 
 
 
