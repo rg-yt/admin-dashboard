@@ -54,7 +54,10 @@ table {
 	--main-shadow: inset 0 2px 8px grey;
 	--card-shadow:0 5px 10px grey;
 	--radius: 10px;
-	
+	--main-text-color:black;
+	--sub-text-color: #636363;
+	--font-starting-size: 1.5rem;
+	--gap: 2rem;
 }
 /* Layout */
 
@@ -63,8 +66,8 @@ table {
 body {
   display: grid;
   grid-template-columns: minmax(300px, 400px) 1fr;
-  grid-template-rows: 150px 1fr;
-	min-height: 100vh;
+  grid-template-rows: 250px 1fr;
+	height: 100vh;
 }
 
 .sidebar {
@@ -74,30 +77,46 @@ body {
 
 .main-content {
 	display: grid;
-	grid-template-columns: 3fr 1fr;
-	grid-template-rows: min-content;
+	grid-template-columns: 4fr 1fr;
+	grid-template-rows: minmax(1fr, min-content);
 	padding: 2rem;
-	column-gap: 2rem;
+	column-gap: var(--gap);
 }
 
 .side-content {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 1fr;
-	gap: 2rem;
+	gap: var(--gap);
 }
 
 /* Card structure */
 
 .card-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
-	gap:2rem;
+	grid-template-columns: repeat(auto-fill, minmax(650px,1fr));
+	grid-auto-rows: 1fr;
+	gap:var(--gap);
 }
 
 .card-container > .card {
-  min-height: 300px;
+	padding:  50px 30px;
+  min-height:200px;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	gap:15px;
 }
+.card > .card-text {
+	margin-right: 25%;
+}
+
+.icon-grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10px, 40px));
+	gap: calc(2* var(--gap));
+	justify-content: end;
+}
+
 
 /* Side structure */
 
@@ -106,7 +125,7 @@ body {
 	grid-template-rows: min-content 1fr;
 }
 
-/* Styling and Color*/
+/* Background, Shadows and Box Color*/
 
 .sidebar {
 	background-color: var(--sidebar-color);
@@ -134,8 +153,23 @@ body {
   border-radius: var(--radius);
 }
 
+/* Text styling */
+
 h1 {
-	font-size: 1.75rem;
+	font-size: calc(1.4 * var(--font-starting-size));
 	margin-bottom: 15px;
-	font-weight: 600;
+	font-weight: 800;
 }
+
+h2 {
+	font-weight: 700;
+	font-size: calc(1.16 * var(--font-starting-size));
+	margin-bottom: 10px ;
+	color: var(--sub-text-color);
+}
+p {
+	letter-spacing: 1px;
+	font-size: var(--font-starting-size);
+}
+
+
