@@ -268,15 +268,48 @@ p {
 	.links > h5 {
 		display: none;
 	}
-	.header {
-		justify-items: center;
-	}
+	
 	.header-bottom {
 		flex-direction: column;
 		align-items: center;
 	}
 }
+/* Header Styling */
+.buttons {
+	display: flex;
+	gap:var(--gap)
+}
+ button {
+	background-color:var(--sidebar-color);
+	color: white;
+	border: none;
+	padding: .5rem;
+	min-width: 100px;
+	border-radius: 20px;
+	border: 3px solid transparent;
+	
+ }
 
+ button:hover {
+	background-color: white;
+	color: #1792D4;
+	border-color: #1792D4;
+ }
+ input {
+	margin-left: 10%;
+	min-width: 50%;
+	appearance: none;
+	display: block;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+	background-color: lightgrey;
+	border-radius: 10px;
+ }
 
 
 
